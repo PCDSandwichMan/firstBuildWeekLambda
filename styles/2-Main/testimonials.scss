@@ -1,0 +1,135 @@
+@import url('../0-Globals/mixins.scss');
+@import url('../0-Globals/variables.scss');
+
+$primary: #42b186;
+$secondary: #b1426d;
+$tertiary: #d999b2;
+
+@mixin F($j: center, $a: center, $d: row) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+
+// TODO fix and remove above
+
+#main__testimonials {
+  margin: 30vh 0 25vh;
+}
+
+#testimonials-container {
+  @include F();
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  background: #ececec;
+  @include F();
+  width: 40%;
+  margin: 10px;
+  padding: 20px;
+}
+
+.testimonial__text {
+  p {
+    color: #665;
+    font-size: 0.9rem;
+  }
+  h4 {
+    color: $primary;
+    margin: 15px 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    strong {
+      color: #555;
+      font-size: 0.7rem;
+      font-style: italic;
+      font-weight: 700;
+    }
+  }
+}
+
+.testimonial__image-container {
+  @include F();
+  padding: 5px;
+  margin: 20px;
+  background: #fff;
+  box-shadow: 2px 2px 4px #999;
+  border-radius: 100%;
+}
+
+#testimonial__image {
+  width: 80px;
+  height: 80px;
+  img {
+    object-fit: cover;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-device-width: 1000px) {
+  .testimonial {
+    width: 750px;
+  }
+
+  #testimonial__image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .testimonial__text {
+    p {
+      font-size: 1.5rem;
+    }
+    h4 {
+      font-size: 1.2rem;
+      strong {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 808px) {
+  .testimonial {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-device-width: 664px) {
+  .testimonial {
+    width: 500px;
+    @include F(center, center, column);
+    &:nth-child(odd) {
+      display: none;
+    }
+  }
+}
+
+
+@media only screen and (max-device-width: 564px) {
+  .testimonial {
+    width: 90%;
+  }
+
+  #testimonial__image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .testimonial__text {
+    text-align: center;
+    p {
+      font-size: 1.7rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+      strong {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

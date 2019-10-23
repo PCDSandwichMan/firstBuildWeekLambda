@@ -1,0 +1,98 @@
+@import url("../0-Globals/mixins.scss");
+@import url("../0-Globals/variables.scss");
+#sub-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background: #1c1c1c;
+  height: 50px;
+}
+
+#sub-nav div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#sub-nav__contact-container div {
+  margin: 0 10px;
+}
+
+#sub-nav__contact-container div i {
+  margin: 0 10px;
+  font-size: 2rem;
+  color: #42b186;
+}
+
+#sub-nav__contact-container div h5 {
+  color: #888;
+}
+
+#sub-nav__contact-container div h5 span {
+  color: #42b186;
+  -webkit-transition: 100ms all ease-in-out;
+  transition: 100ms all ease-in-out;
+  padding: 5px;
+}
+
+#sub-nav__contact-container div h5 span:hover {
+  cursor: pointer;
+  color: #5cdfad;
+}
+
+#sub-nav__social {
+  margin: 0 5% 0 0;
+  height: 100%;
+}
+
+#sub-nav__social div {
+  height: 100%;
+  border-left: 1px solid #9999993f;
+  border-right: 1px solid #9999993f;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+#sub-nav__social div:hover {
+  cursor: pointer;
+  background: #222;
+}
+
+#sub-nav__social div:hover i {
+  color: #42b186;
+}
+
+#sub-nav__social div i {
+  color: #888;
+  font-size: 1rem;
+  padding: 0 20px;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+@media only screen and (max-device-width: 777px) {
+  #contact__email {
+    display: none !important;
+  }
+}
+/*# sourceMappingURL=subnav.css.map */

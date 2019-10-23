@@ -1,0 +1,124 @@
+@import url('../0-Globals/mixins.scss');
+@import url('../0-Globals/variables.scss');
+
+$primary: #42b186;
+$secondary: #b1426d;
+$tertiary: #d999b2;
+
+@mixin F($j: center, $a: center, $d: row) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+
+// TODO fix and remove above
+#main__WhatWeDo {
+  @include F($d: column);
+}
+
+#whatWeDo__image {
+  width: 70%;
+  margin: 0 0 50px 0;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.whatWeDo__example-container {
+  @include F(center, center);
+  width: 28%;
+}
+
+.example-placeholder {
+  width: 60%;
+  height: 100%;
+  margin: 0 20px;
+  @include F();
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#whatWeDo__strongPoints {
+  @include F();
+}
+.strongPoints__text {
+  @include F(center, flex-start, column);
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 20px 0;
+    color: #222;
+  }
+  p {
+    color: #777;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-device-width: 1000px) {
+  .whatWeDo__example-container {
+    width: 70%;
+  }
+  #whatWeDo__strongPoints {
+    @include F($d: column);
+  }
+
+  .example-placeholder {
+    width: 80%;
+    margin: 50px 0px;
+    img {
+      width: 50%;
+    }
+  }
+
+  .strongPoints__text {
+    @include F(center, flex-start, column);
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 500;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 636px) {
+  .whatWeDo__example-container {
+    @include F(center, center, column);
+  }
+  #whatWeDo__strongPoints {
+    @include F($d: column);
+  }
+
+  #whatWeDo__image {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .example-placeholder {
+    width: 80%;
+    margin: 10px 0px;
+    img {
+      width: 50%;
+    }
+  }
+
+  .strongPoints__text {
+    @include F(center, flex-start, column);
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    p {
+      display: none;
+    }
+  }
+}

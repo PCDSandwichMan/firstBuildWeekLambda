@@ -1,0 +1,288 @@
+@import url('../0-Globals/mixins.scss');
+@import url('../0-Globals/variables.scss');
+
+$primary: #42b186;
+$secondary: #b1426d;
+$tertiary: #d999b2;
+
+@mixin F($j: center, $a: center, $d: row) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+
+// TODO fix and remove above
+
+footer {
+  // display: none !important;
+  width: 100vw;
+  position: relative;
+  background: #1f1f1f;
+  color: #999;
+  img {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 70%;
+    height: 100%;
+  }
+}
+
+#footer__info-container {
+  z-index: 2;
+  @include F(space-evenly, flex-start);
+  padding: 10vh 5vw 8vh;
+  section {
+    width: 30%;
+    @include F(flex-start, flex-start, column);
+    h4 {
+      color: $primary;
+      margin: 0 0 25px;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+    }
+    #about-p {
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+      &:nth-child(2) {
+        margin: 0 0 30px;
+      }
+    }
+    a {
+      color: #999;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      transition: 100ms all ease-in;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.contact-subContainer {
+  @include F(space-between, center);
+  margin: 0 0 10px;
+  i {
+    color: $primary;
+    margin: 0 5px;
+    font-size: 0.8rem;
+  }
+  h5 {
+    color: $primary;
+    margin: 0 5px;
+    font-size: 0.9rem;
+  }
+  h6 {
+    font-size: 0.9rem;
+    // margin-left: 10px;
+  }
+}
+
+#footer__contact {
+  p {
+    margin: 0 0 25px;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  form {
+    @include F();
+    width: 100%;
+    height: 50px;
+    input {
+      width: 100%;
+      height: 100%;
+      background: #acacac25;
+      color: #888;
+      border: none;
+      font-size: 0.9rem;
+      padding: 0 15px;
+      z-index: 2;
+      &:focus {
+        outline: $primary 1px solid;
+      }
+    }
+    button {
+      background: $primary;
+      color: #fff;
+      border: none;
+      font-size: 0.8rem;
+      padding: 0 30px;
+      height: 100%;
+      &:hover {
+        cursor: pointer;
+        background: #3b9e78;
+      }
+    }
+  }
+}
+
+#contact__subNote {
+  font-size: 0.8rem !important;
+  margin: 20px 0 !important;
+}
+
+#footer__copyright {
+  z-index: 3;
+  padding: 3vh 7vw;
+  @include F(space-between);
+  h6 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #999;
+  }
+  div {
+    z-index: 10;
+    width: 12%;
+    @include F(space-evenly);
+    color: #777;
+    i {
+      padding: 10px;
+      transition: 200ms all ease-in-out;
+      &:hover {
+        cursor: pointer;
+        color: $primary;
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 1000px) {
+  #footer__info-container {
+    @include F(space-evenly, flex-start, column);
+    padding: 10vh 5vw 8vh;
+    section {
+      width: 100%;
+      margin: 30px 0;
+      h4 {
+        margin: 0 0 25px;
+        text-transform: uppercase;
+        font-size: 2.4rem;
+      }
+      #about-p {
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+      }
+      a {
+        color: #999;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        transition: 100ms all ease-in;
+      }
+    }
+  }
+
+  .contact-subContainer {
+    margin: 0 0 10px;
+    i {
+      font-size: 1.4rem;
+    }
+    h5 {
+      font-size: 1.6rem;
+    }
+    h6 {
+      font-size: 1.6rem;
+    }
+  }
+
+  #footer__contact {
+    p {
+      font-size: 1.6rem;
+    }
+    form {
+      width: 100%;
+      height: 70px;
+      input {
+        font-size: 2rem;
+      }
+      button {
+        font-size: 1.6rem;
+        padding: 0 30px;
+      }
+    }
+  }
+
+  #contact__subNote {
+    font-size: 1.2rem !important;
+  }
+
+  #footer__copyright {
+    padding: 3vh 50px;
+    h6 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #999;
+    }
+    div {
+      margin: 0 15px 0 0;
+      i {
+        font-size: 1.5rem;
+        padding: 0 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 688px) {
+  #footer__info-container {
+    section {
+      h4 {
+        font-size: 2rem;
+      }
+      #about-p {
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+      a {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .contact-subContainer {
+    margin: 0 0 10px;
+    i {
+      font-size: 1.4rem;
+    }
+    h5 {
+      font-size: 1.6rem;
+    }
+    h6 {
+      font-size: 1.6rem;
+    }
+  }
+
+  #footer__contact {
+    p {
+      font-size: 1.5rem;
+    }
+    form {
+      height: 60px;
+      input {
+        font-size: 1.8rem;
+      }
+      button {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  #contact__subNote {
+    font-size: 1.3rem !important;
+  }
+
+  #footer__copyright {
+    @include F(space-evenly, center, column);
+    padding: 3vh 50px;
+    h6 {
+      margin: 25px 0;
+    }
+    div {
+      i {
+        font-size: 1.8rem;
+        padding: 0 20px;
+      }
+    }
+  }
+}

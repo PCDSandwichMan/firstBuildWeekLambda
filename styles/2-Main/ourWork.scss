@@ -1,0 +1,119 @@
+@import url('../0-Globals/mixins.scss');
+@import url('../0-Globals/variables.scss');
+
+$primary: #42b186;
+$secondary: #b1426d;
+$tertiary: #d999b2;
+
+@mixin F($j: center, $a: center, $d: row) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+
+// TODO fix and remove above
+
+#main__ourWork {
+  margin: 35vh 0;
+}
+
+.active {
+  background: $primary;
+  a {
+    color: #fff !important;
+  }
+}
+
+#ourWork__btnFilter {
+  @include F(space-evenly);
+  margin: 0 10vw;
+  div {
+    padding: 20px 30px;
+    border-radius: 0.5rem;
+    transition: all 300ms ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background: $primary;
+      a {
+        color: #fff;
+      }
+    }
+    a {
+      color: #111;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 0.8rem;
+      letter-spacing: 0.25px;
+      transition: all 300ms ease-in-out;
+    }
+  }
+}
+
+#ourWork__example-container {
+  @include F(space-evenly);
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.ourWork__example {
+  width: 30%;
+  margin: 15px 0;
+  img {
+    width: 100%;
+    height: 100%;
+    transition: 350ms all ease-in-out;
+    &:hover {
+      cursor: pointer;
+      filter: brightness(0.3);
+    }
+  }
+}
+
+@media only screen and (max-device-width: 1000px) {
+  #ourWork__btnFilter {
+    div {
+      a {
+        font-weight: 300;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 860px) {
+  .ourWork__example {
+    width: 20rem;
+  }
+
+  #ourWork__btnFilter {
+    div {
+      @include F();
+      a {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 724px) {
+  #ourWork__example-container {
+    @include F(space-evenly, center, column);
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  #ourWork__btnFilter {
+    display: none;
+  }
+
+  .ourWork__example {
+    width: 80%;
+    &:nth-child(even) {
+      display: none;
+    }
+  }
+}

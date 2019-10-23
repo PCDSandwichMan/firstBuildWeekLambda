@@ -1,0 +1,77 @@
+@import url('../0-Globals/mixins.scss');
+@import url('../0-Globals/variables.scss');
+
+@mixin F($j: center, $a: center, $d: row) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+
+$primary: #42b186;
+$secondary: #b1426d;
+$tertiary: #d999b2;
+
+// TODO fix mixin imports
+
+#sub-nav {
+  @include F(space-between);
+  background: #1c1c1c;
+  height: 50px;
+  div {
+    @include F(space-evenly);
+  }
+}
+
+#sub-nav__contact-container {
+  div {
+    margin: 0 10px;
+    i {
+      margin: 0 10px;
+      font-size: 2rem;
+      color: $primary;
+    }
+    h5 {
+      color: #888;
+      span {
+        color: $primary;
+        transition: 100ms all ease-in-out;
+        padding: 5px;
+        &:hover {
+          cursor: pointer;
+          color: #5cdfad;
+        }
+      }
+    }
+  }
+}
+
+#sub-nav__social {
+  margin: 0 5% 0 0;
+  height: 100%;
+  div {
+    height: 100%;
+    border-left: 1px solid #9999993f;
+    border-right: 1px solid #9999993f;
+    transition: all 150ms ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background: #222;
+      i {
+        color: $primary;
+      }
+    }
+    i {
+      color: #888;
+      font-size: 1rem;
+      padding: 0 20px;
+      transition: all 150ms ease-in-out;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 777px) {
+  #contact__email {
+    display: none !important;
+  }
+}

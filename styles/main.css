@@ -1,0 +1,22 @@
+@import url('../node_modules/sal.js/dist/sal.css');
+
+/* Global */
+@import url('./0-Globals/reset.css');
+@import url('./0-Globals/mixins.css');
+@import url('./0-Globals/variables.css');
+/* Navs */
+@import url('./1-Navs/subnav.css');
+@import url('./1-Navs/nav.css');
+/* Header */
+@import url('./2-header/header.css');
+/* Main */
+@import url('./2-Main/benefits.css');
+@import url('./2-Main/whatWeDo.css');
+@import url('./2-Main/ourWork.css');
+@import url('./2-Main/ourTeam.css');
+@import url('./2-Main/pricing.css');
+@import url('./2-Main/sub-callToAction.css');
+@import url('./2-Main/testimonials.css');
+@import url('./2-Main/contact.css');
+/* Footer */
+@import url('./3-Footer/mainFooter.css');

@@ -1,0 +1,124 @@
+@import url('../0-Globals/mixins.scss');
+@import url('../0-Globals/variables.scss');
+
+$primary: #42b186;
+$secondary: #b1426d;
+$tertiary: #d999b2;
+
+@mixin F($j: center, $a: center, $d: row) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+
+// TODO fix and remove above
+
+.main__section-title {
+  margin: 80px 20vw;
+  @include F(center, center, column);
+  h2 {
+    margin: 0 0 20px 0;
+    font-size: 3rem;
+  }
+  hr {
+    margin: 0 0 15px 0;
+    border: none;
+    background: $primary;
+    height: 5px;
+    width: 80px;
+  }
+  p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #555;
+  }
+}
+
+#main__benefits {
+  margin: 20vh 0;
+}
+
+// - Benefit Cards
+
+#benefits__features {
+  width: 100%;
+  @include F();
+  flex-wrap: wrap;
+}
+
+.features-container {
+  @include F(center, center, column);
+  width: 400px;
+  background: #fff;
+  border: 0.5px solid #d6d6d650;
+  padding: 20px;
+  div {
+    width: 30%;
+    height: 150px;
+    margin: 20px 0;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  h3 {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #111;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+
+
+@media only screen and (max-device-width: 1000px) {
+  .main__section-title {
+    width: 80%;
+    margin: 10vh auto;
+    h2 {
+      font-size: 4rem;
+    }
+    hr {
+      height: 7px;
+      width: 80px;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  .features-container {
+    width: 400px;
+    padding: 20px;
+    div {
+      width: 30%;
+      height: 150px;
+      margin: 20px 0;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    h3 {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+      font-weight: 500;
+      color: #111;
+    }
+    p {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 800px) {
+  .features-container {
+    &:nth-child(odd) {
+      display: none;
+    }
+  }
+}

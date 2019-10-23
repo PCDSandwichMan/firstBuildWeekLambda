@@ -1,0 +1,88 @@
+@import url('../0-Globals/mixins.scss');
+@import url('../0-Globals/variables.scss');
+
+$primary: #42b186;
+$secondary: #b1426d;
+$tertiary: #d999b2;
+
+@mixin F($j: center, $a: center, $d: row) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+
+// TODO fix and remove above
+
+#main__sub-callToAction {
+  background: url('../../images/subHero.jpg') no-repeat center;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  margin: 20vh 0;
+  #sub-callToAction-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #111111ab;
+    div {
+      @include F($d: column);
+      width: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      h3 {
+        color: $primary;
+        font-size: 2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      h2 {
+        color: #fff;
+        font-size: 3rem;
+        font-weight: 500;
+        margin: 5px 0;
+      }
+      section {
+        margin: 30px 0 0;
+        padding: 20px 40px;
+        background: $primary;
+        border-radius: 0.3rem;
+        transition: 100ms all ease-in-out;
+        &:hover {
+          cursor: pointer;
+          background: #3b9975;
+        }
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 1000px) {
+  #main__sub-callToAction {
+    #sub-callToAction-overlay {
+      div {
+        width: 90%;
+        h3 {
+          text-align: center;
+          font-size: 3rem;
+        }
+        h2 {
+          text-align: center;
+          font-size: 3rem;
+        }
+        section {
+          a {
+            font-size: 1.7rem;
+          }
+        }
+      }
+    }
+  }
+}

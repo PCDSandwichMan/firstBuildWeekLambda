@@ -1,0 +1,1 @@
+{"id":"images/example1.jpg","dependencies":[{"name":"/Users/matt/Lambda/BuildWeek1/package.json","includedInParent":true,"mtime":1571767833251}],"generated":{"js":"module.exports = \"/89e647ecc229bfce86c71fbd60c17a3b.jpg\";"},"sourceMaps":null,"error":null,"hash":"ab69fd3ee67488e737fbebc49404321c","cacheData":{"env":{}}}

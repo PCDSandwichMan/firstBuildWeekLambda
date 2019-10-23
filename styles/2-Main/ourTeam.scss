@@ -1,0 +1,74 @@
+@import url('../0-Globals/mixins.scss');
+@import url('../0-Globals/variables.scss');
+
+$primary: #42b186;
+$secondary: #b1426d;
+$tertiary: #d999b2;
+
+@mixin F($j: center, $a: center, $d: row) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+
+// TODO fix and remove above
+
+#main__ourTeam {
+  margin: 5vh 0 30vh;
+}
+
+.team__group {
+  @include F(space-evenly);
+  margin: 80px 0;
+}
+
+.team__member {
+  @include F($d: column);
+  padding: 10px;
+
+  div {
+    width: 200px;
+    height: 200px;
+    padding: 8px;
+    border-radius: 100%;
+    box-shadow: 2px 2px 4px #999;
+    background: white;
+    img {
+      object-fit: cover;
+      border-radius: 100%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  h1 {
+    margin: 30px 0 0;
+    color: $primary;
+    font-weight: 600;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-device-width: 1000px) {
+  .team__member {
+    @include F($d: column);
+    padding: 10px;
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 880px) {
+  .team__group {
+    flex-wrap: wrap;
+  }
+}

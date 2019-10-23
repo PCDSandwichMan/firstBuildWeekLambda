@@ -1,0 +1,220 @@
+@import url('../0-Globals/mixins.scss');
+@import url('../0-Globals/variables.scss');
+
+$primary: #42b186;
+$secondary: #b1426d;
+$tertiary: #d999b2;
+
+@mixin F($j: center, $a: center, $d: row) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+
+// TODO fix and remove above
+
+#main__pricing {
+  margin: 0vh 0 40vh;
+}
+
+#cards-container {
+  @include F();
+}
+
+.highlight {
+  background: #4dcc9b !important;
+}
+
+.pricing-card {
+  width: 25%;
+  margin: 0 20px;
+  @include F(center, center, column);
+  background: #eee;
+  border-radius: 0.2rem;
+  .card__title {
+    border-radius: 0.2rem;
+    width: 100%;
+    background: #222;
+    padding: 40px 0;
+    h2 {
+      text-align: center;
+      font-size: 1.7rem;
+      color: white;
+    }
+  }
+  hr {
+    border: none;
+    width: 100%;
+    height: 1px;
+    background: #dadada;
+  }
+}
+
+.card_stats-container {
+  @include F(center, center, column);
+  margin: 30px 0;
+  h3 {
+    margin: 15px 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #999;
+    strong {
+      color: #222;
+    }
+  }
+}
+
+.card_pricing-container {
+  @include F(center, center, column);
+  margin: 0 auto;
+  h1 {
+    color: #333;
+    position: relative;
+    font-size: 4rem;
+    font-weight: 400;
+    margin: 20px 0 0;
+    &::before {
+      content: '$';
+      color: #333;
+      position: absolute;
+      font-size: 1.5rem;
+      font-weight: 400;
+      transform: translate(-120%, 25%);
+    }
+  }
+  h4 {
+    color: #afafaf;
+    font-weight: 200;
+  }
+}
+
+.card__btn {
+  padding: 15px 30px;
+  background: $primary;
+  border-radius: 0.25rem;
+  margin: 40px 0;
+  transition: all 100ms ease-in-out;
+  &:hover {
+    cursor: pointer;
+    background: #4dcc9b;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+@media only screen and (max-device-width: 1344px) {
+  .pricing-card {
+    width: 350px;
+    .card__title {
+      h2 {
+        text-align: center;
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .card_stats-container {
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #999;
+    }
+  }
+
+  .card_pricing-container {
+    h1 {
+      font-size: 5rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .card__btn {
+    a {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 1188px) {
+  #cards-container {
+    @include F(center, center, column);
+  }
+
+  .pricing-card {
+    width: 600px;
+    margin: 50px 0px;
+    box-shadow: 2px 2px 6px #999;
+    .card__title {
+      h2 {
+        text-align: center;
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .card_stats-container {
+    h3 {
+      margin: 25px 0;
+      font-size: 2rem;
+    }
+  }
+
+  .card_pricing-container {
+    h1 {
+      font-size: 6rem;
+    }
+    h4 {
+      font-size: 1.7rem;
+    }
+  }
+
+  .card__btn {
+    a {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 668px) {
+  #cards-container {
+    @include F(center, center, column);
+  }
+
+  .pricing-card {
+    width: 400px;
+    margin: 20px 0px;
+    .card__title {
+      h2 {
+        text-align: center;
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .card_stats-container {
+    h3 {
+      margin: 15px 0;
+      font-size: 1.8rem;
+    }
+  }
+
+  .card_pricing-container {
+    h1 {
+      font-size: 4.5rem;
+    }
+    h4 {
+      font-size: 1.2rem;
+    }
+  }
+
+  .card__btn {
+    a {
+      font-size: 1.8rem;
+    }
+  }
+}

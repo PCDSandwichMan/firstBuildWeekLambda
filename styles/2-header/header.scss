@@ -1,0 +1,134 @@
+@import url('../0-Globals/mixins.scss');
+@import url('../0-Globals/variables.scss');
+
+$primary: #42b186;
+$secondary: #b1426d;
+$tertiary: #d999b2;
+
+@mixin F($j: center, $a: center, $d: row) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+
+// TODO fix and remove above
+
+header {
+  background: url('../../images/header-hero.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 95vh;
+  position: relative;
+}
+
+#hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.719);
+}
+
+#hero__text {
+  @include F(center, flex-start, column);
+}
+
+#header__hero {
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  transform: translate(0, -50%);
+
+  width: 50vw;
+  h1 {
+    color: $primary;
+    font-size: 3rem;
+  }
+  h2 {
+    color: #fff;
+    font-size: 3rem;
+    margin: 20px 0;
+  }
+  p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 0 20px;
+  }
+}
+
+#hero__callToAction {
+  align-self: flex-start;
+  background: $primary;
+  border-radius: 0.3rem;
+  padding: 20px 35px;
+  transition: 200ms all ease-in-out;
+  &:hover {
+    cursor: pointer;
+    background: #3b9e78;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+@media only screen and (max-device-width: 1000px) {
+  #hero__text {
+    @include F(center, center, column);
+  }
+
+  #header__hero {
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h1 {
+      font-size: 4rem;
+    }
+    h2 {
+      font-size: 4rem;
+    }
+    p {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+  }
+
+  #hero__callToAction {
+    margin: 20px 0;
+    align-self: center;
+    padding: 25px 45px;
+    transition: 200ms all ease-in-out;
+    a {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+
+@media only screen and (max-device-width: 1000px) {
+
+  #header__hero {
+    h1 {
+      font-size: 3.2rem;
+      text-align: center;
+    }
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  }
+
+  #hero__callToAction {
+    margin: 20px 0;
+    align-self: center;
+    padding: 25px 45px;
+    transition: 200ms all ease-in-out;
+    a {
+      font-size: 1.5rem;
+    }
+  }
+}
