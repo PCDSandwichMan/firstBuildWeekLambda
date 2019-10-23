@@ -2,6 +2,7 @@
 @import url("../0-Globals/variables.scss");
 #main__ourTeam {
   margin: 5vh 0 30vh;
+  overflow: hidden;
 }
 
 .team__group {

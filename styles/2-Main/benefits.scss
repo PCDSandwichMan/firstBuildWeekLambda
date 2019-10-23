@@ -72,8 +72,6 @@ $tertiary: #d999b2;
   }
 }
 
-
-
 @media only screen and (max-device-width: 1000px) {
   .main__section-title {
     width: 80%;
@@ -119,6 +117,22 @@ $tertiary: #d999b2;
   .features-container {
     &:nth-child(odd) {
       display: none;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 700px) {
+  .main__section-title {
+    margin: 80px auto;
+    @include F(center, center, column);
+    h2 {
+      font-size: 3rem;
+    }
+    hr {
+      height: 5px;
+    }
+    p {
+      font-size: 1.2rem;
     }
   }
 }

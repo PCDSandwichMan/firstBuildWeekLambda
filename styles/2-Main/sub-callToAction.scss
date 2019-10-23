@@ -86,3 +86,47 @@ $tertiary: #d999b2;
     }
   }
 }
+
+@media only screen and (max-device-width: 840px) {
+  #main__sub-callToAction {
+    #sub-callToAction-overlay {
+      div {
+        width: 90%;
+        h3 {
+          font-size: 2.5rem;
+        }
+        h2 {
+          font-size: 2.5rem;
+        }
+        section {
+          padding: 20px 30px;
+          a {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 627px) {
+  #main__sub-callToAction {
+    #sub-callToAction-overlay {
+      div {
+        width: 90%;
+        h3 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 2rem;
+        }
+        section {
+          padding: 15px 30px;
+          a {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

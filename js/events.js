@@ -13,3 +13,14 @@ if (window.outerWidth <= 918) {
     });
   }
 }
+
+// Our Work Selection and filter
+const filterBtns = document.getElementsByClassName('ourWork__filter');
+for (i = 0; i < filterBtns.length; ++i) {
+  filterBtns[i].addEventListener('click', function() {
+    for (i = 0; i < filterBtns.length; ++i) {
+      filterBtns[i].classList.remove('active');
+    }
+    this.classList.toggle('active');
+  });
+}
