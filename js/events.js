@@ -16,11 +16,17 @@ if (window.outerWidth <= 918) {
 
 // Our Work Selection and filter
 const filterBtns = document.getElementsByClassName('ourWork__filter');
+const picOptions = document.getElementsByClassName('ourWork__example');
 for (i = 0; i < filterBtns.length; ++i) {
   filterBtns[i].addEventListener('click', function() {
+    // - Just handles animations for buttons
     for (i = 0; i < filterBtns.length; ++i) {
       filterBtns[i].classList.remove('active');
     }
     this.classList.toggle('active');
+    // - handles filtering
+    for (i = 0; i < picOptions.length; ++i) {
+      
+    }
   });
 }
